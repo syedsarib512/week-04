@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-6">
+            <h1 class="text-4xl font-bold text-blue-600">JavaScript Functions</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a></li>
+                    <li><a href="js-fundamentals.html" class="text-gray-800 hover:text-blue-600">JS Fundamentals</a></li>
+                    <li><a href="dom-manipulation.html" class="text-gray-800 hover:text-blue-600">DOM Manipulation</a></li>
+                    <li><a href="async-js.html" class="text-gray-800 hover:text-blue-600">Async JS</a></li>
+                    <li><a href="js-functions.html" class="text-gray-800 hover:text-blue-600">JS Functions</a></li>
+                    <li><a href="todo-app.html" class="text-gray-800 hover:text-blue-600">TODO App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-6 bg-white shadow rounded">
+        <section>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">JavaScript Functions</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                Functions are a fundamental building block in JavaScript, allowing you to create reusable blocks of code. In this section, we’ll explore different types of functions and how to use them effectively.
+            </p>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">What Are JavaScript Functions?</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                A function is a block of code designed to perform a specific task. Functions are defined using the <code>function</code> keyword, followed by a name, a list of parameters in parentheses, and a block of code in curly braces.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Calling a function
+const message = greet("Alice");
+console.log(message);</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Different Types of Functions</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                JavaScript supports various types of functions, including regular functions, arrow functions, and anonymous functions.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Regular function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const multiply = (a, b) => {
+    return a * b;
+};
+
+// Anonymous function
+const divide = function(a, b) {
+    return a / b;
+};</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Higher-Order Functions</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Higher-order functions are functions that take other functions as arguments or return them as results. Common examples include <code>map</code>, <code>filter</code>, and <code>reduce</code>.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Using map to double each element in an array
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((num) => num * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+
+// Using filter to get even numbers
+const evens = numbers.filter((num) => num % 2 === 0);
+console.log(evens); // [2, 4]
+
+// Using reduce to sum all numbers
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // 15</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Callback Functions</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Using a callback function
+function fetchData(callback) {
+    setTimeout(() => {
+        callback("Data received!");
+    }, 2000);
+}
+
+fetchData((message) => {
+    console.log(message);
+});</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Practice Exercises</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Create a small project or modify an existing one by applying JavaScript functions learned from the video. Save your work in the folder and upload it to your GitHub repository. The deadline for submission is at the end of the week.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 JavaScript Learning Week 04. All rights reserved.</p>
+    </footer>
+</body>
+</html>

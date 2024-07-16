@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-6">
+            <h1 class="text-4xl font-bold text-blue-600">TODO App</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a></li>
+                    <li><a href="js-fundamentals.html" class="text-gray-800 hover:text-blue-600">JS Fundamentals</a></li>
+                    <li><a href="dom-manipulation.html" class="text-gray-800 hover:text-blue-600">DOM Manipulation</a></li>
+                    <li><a href="async-js.html" class="text-gray-800 hover:text-blue-600">Async JS</a></li>
+                    <li><a href="js-functions.html" class="text-gray-800 hover:text-blue-600">JS Functions</a></li>
+                    <li><a href="todo-app.html" class="text-gray-800 hover:text-blue-600">TODO App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-6 bg-white shadow rounded">
+        <section>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">TODO App</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                In this section, you will learn how to create a simple TODO application using JavaScript, HTML, and CSS. This project will help you apply the concepts learned throughout this week, such as DOM manipulation, event handling, and asynchronous programming.
+            </p>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">HTML Structure</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Start by creating the basic HTML structure for your TODO app. You will need an input field to add new tasks, a button to submit them, and a list to display the tasks.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;TODO App&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;TODO App&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;input type="text" id="new-task" placeholder="Enter a new task"&gt;
+        &lt;button id="add-task"&gt;Add Task&lt;/button&gt;
+        &lt;ul id="task-list"&gt;&lt;/ul&gt;
+    &lt;/main&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">CSS Styling</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Add some basic styles to make your TODO app look clean and visually appealing. You can use the following CSS as a starting point.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+main {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 0.5rem;
+    background: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.complete {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">JavaScript Functionality</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Finally, add JavaScript to handle adding, completing, and deleting tasks. Here’s a basic implementation to get you started.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Selecting DOM elements
+const newTaskInput = document.getElementById("new-task");
+const addTaskButton = document.getElementById("add-task");
+const taskList = document.getElementById("task-list");
+
+// Adding a new task
+addTaskButton.addEventListener("click", () => {
+    const taskText = newTaskInput.value.trim();
+    if (taskText !== "") {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `${taskText} &lt;button class="delete-btn"&gt;X&lt;/button&gt;`;
+        taskList.appendChild(listItem);
+        newTaskInput.value = "";
+
+        // Mark task as complete
+        listItem.addEventListener("click", () => {
+            listItem.classList.toggle("complete");
+        });
+
+        // Delete task
+        const deleteButton = listItem.querySelector(".delete-btn");
+        deleteButton.addEventListener("click", (event) => {
+            event.stopPropagation();
+            taskList.removeChild(listItem);
+        });
+    }
+});</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Practice Exercises</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Enhance the TODO app by adding additional features such as task editing, saving tasks to local storage, or adding task due dates. Save your work in the folder and upload it to your GitHub repository. The deadline for submission is at the end of the week.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 JavaScript Learning Week 04. All rights reserved.</p>
+    </footer>
+</body>
+</html>

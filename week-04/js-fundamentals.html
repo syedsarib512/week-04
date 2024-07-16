@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-6">
+            <h1 class="text-4xl font-bold text-blue-600">JavaScript Fundamentals</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a></li>
+                    <li><a href="js-fundamentals.html" class="text-gray-800 hover:text-blue-600">JS Fundamentals</a></li>
+                    <li><a href="dom-manipulation.html" class="text-gray-800 hover:text-blue-600">DOM Manipulation</a></li>
+                    <li><a href="async-js.html" class="text-gray-800 hover:text-blue-600">Async JS</a></li>
+                    <li><a href="js-functions.html" class="text-gray-800 hover:text-blue-600">JS Functions</a></li>
+                    <li><a href="todo-app.html" class="text-gray-800 hover:text-blue-600">TODO App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-6 bg-white shadow rounded">
+        <section>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">JavaScript Fundamentals</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                JavaScript is a versatile programming language that allows you to create dynamic and interactive web content. In this section, we'll cover the basics of JavaScript, including its syntax, variables, data types, operators, functions, and control flow.
+            </p>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Basic Syntax and Structure</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                JavaScript code can be embedded directly into HTML pages using the <code>&lt;script&gt;</code> tag. Here's a simple example:
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>&lt;script&gt;
+    console.log("Hello, world!");
+&lt;/script&gt;</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Variables, Data Types, and Operators</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Variables in JavaScript can be declared using <code>var</code>, <code>let</code>, or <code>const</code>. JavaScript supports various data types, including strings, numbers, booleans, objects, and arrays. Operators are used to perform operations on variables and values.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Variable declaration
+let name = "John";
+const age = 30;
+
+// Data types
+let isStudent = true;
+let grades = [90, 85, 88];
+
+// Operators
+let sum = 10 + 20;
+let isAdult = age >= 18;</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Functions and Control Flow</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Functions are blocks of code designed to perform a particular task. Control flow statements, such as if-else, switch, for, and while, control the execution of the code.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Control flow
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are not an adult.");
+}
+
+for (let i = 0; i < grades.length; i++) {
+    console.log("Grade: " + grades[i]);
+}</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Basic DOM Manipulation</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The Document Object Model (DOM) represents the structure of an HTML document. JavaScript can interact with and manipulate the DOM to create dynamic web pages.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Selecting a DOM element
+const title = document.querySelector("h1");
+
+// Modifying a DOM element
+title.textContent = "JavaScript Fundamentals";
+title.style.color = "blue";</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Practice Exercises</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Practice writing JavaScript code by completing the exercises provided in the video. Save your work in the folder and upload it to your GitHub repository. The deadline for submission is at the end of the week.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 JavaScript Learning Week 04. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <header class="bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center p-6">
+            <h1 class="text-4xl font-bold text-blue-600">DOM Manipulation</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a></li>
+                    <li><a href="js-fundamentals.html" class="text-gray-800 hover:text-blue-600">JS Fundamentals</a></li>
+                    <li><a href="dom-manipulation.html" class="text-gray-800 hover:text-blue-600">DOM Manipulation</a></li>
+                    <li><a href="async-js.html" class="text-gray-800 hover:text-blue-600">Async JS</a></li>
+                    <li><a href="js-functions.html" class="text-gray-800 hover:text-blue-600">JS Functions</a></li>
+                    <li><a href="todo-app.html" class="text-gray-800 hover:text-blue-600">TODO App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8 p-6 bg-white shadow rounded">
+        <section>
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">DOM Manipulation</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document and allows you to manipulate its content and structure using JavaScript. In this section, we’ll cover the basics of DOM manipulation.
+            </p>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Understanding the DOM</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                The DOM is a tree-like representation of an HTML document, where each node represents an element, attribute, or piece of text. JavaScript can interact with the DOM to create, modify, or remove elements dynamically.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;DOM Manipulation&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Selecting DOM Elements</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                You can select DOM elements using various methods such as <code>getElementById</code>, <code>getElementsByClassName</code>, <code>getElementsByTagName</code>, <code>querySelector</code>, and <code>querySelectorAll</code>.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Selecting an element by ID
+const title = document.getElementById("title");
+
+// Selecting elements by class name
+const items = document.getElementsByClassName("item");
+
+// Selecting elements by tag name
+const paragraphs = document.getElementsByTagName("p");
+
+// Selecting elements using querySelector
+const firstItem = document.querySelector(".item");
+
+// Selecting multiple elements using querySelectorAll
+const allItems = document.querySelectorAll(".item");</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Manipulating DOM Elements</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Once you have selected an element, you can manipulate it using various properties and methods, such as <code>textContent</code>, <code>innerHTML</code>, <code>style</code>, and <code>setAttribute</code>.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Modifying the text content of an element
+title.textContent = "Welcome to DOM Manipulation";
+
+// Changing the HTML content of an element
+const container = document.querySelector("#container");
+container.innerHTML = "&lt;p&gt;This is a paragraph.&lt;/p&gt;";
+
+// Changing the style of an element
+title.style.color = "blue";
+
+// Setting an attribute
+title.setAttribute("class", "highlight");</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Adding and Removing Elements</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                You can add and remove elements dynamically using methods like <code>createElement</code>, <code>appendChild</code>, <code>removeChild</code>, and <code>replaceChild</code>.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Creating a new element
+const newItem = document.createElement("li");
+newItem.textContent = "New Item";
+
+// Adding the new element to the DOM
+const list = document.querySelector("ul");
+list.appendChild(newItem);
+
+// Removing an element from the DOM
+const firstItem = document.querySelector("li");
+list.removeChild(firstItem);
+
+// Replacing an element in the DOM
+const anotherNewItem = document.createElement("li");
+anotherNewItem.textContent = "Another New Item";
+list.replaceChild(anotherNewItem, newItem);</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Handling Events</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                JavaScript can handle user interactions and other events using event listeners. Common events include <code>click</code>, <code>mouseover</code>, <code>keydown</code>, and <code>load</code>.
+            </p>
+            <pre class="bg-gray-100 p-4 rounded shadow mb-6">
+<code>// Adding an event listener
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+    alert("Button clicked!");
+});
+
+// Removing an event listener
+button.removeEventListener("click", handleClick);
+
+function handleClick() {
+    alert("Button clicked!");
+}</code>
+            </pre>
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Practice Exercises</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Create a small project or modify an existing one by applying DOM manipulation techniques learned from the video. Save your work in the folder and upload it to your GitHub repository. The deadline for submission is at the end of the week.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2024 JavaScript Learning Week 04. All rights reserved.</p>
+    </footer>
+</body>
+</html>
